@@ -12,13 +12,16 @@
 <a href="/about">About</a>
 </div>
 
+<div>
+    There are <%= Contact.count %> contacts.
+</div>
+
 <ul>
 
 <% @contacts.each do |contact| %>
-    <li><%= contact.first_name %> <%= contact.last_name %> (<%= contact.email %>)</li>
-    <li><%= contact.note %></li>
-    <li><a href="/update_contact_form/<%= contact.id %>">Edit</a> | <a href="/delete_contact_form/<%= contact.id %>">Delete</a></li>
+    <li class="name_email_text"><%= contact.first_name %> <%= contact.last_name %> (<%= contact.email %>)</li>
+    <li class="note_text"><%= contact.note %></li>
+    <li><a href="/update_contact/<%= contact.id %>">Edit</a> | <a href="/delete_contact/<%= contact.id %>">Delete</a></li>
 <% end %>
 
 </ul
-

@@ -14,16 +14,16 @@ get "/about" do
     erb :about
 end
 
-get "/create_contact_form"
+get "/create_contact_form" do 
     erb :create_contact_form
 end
 
-get "/update_contact_form/:id" do
+get "/update_contact/:id" do
     @contact = Contact.find(params[:id])
     erb :update_contact_form
 end
 
-post "/update_contact_form/:id" do
+post "/update_contact/:id" do
     update_contact = Contact.find(params[:id])
     update_contact.first_name=params[:first_name]
     update_contact.last_name=params[:last_name]
@@ -40,6 +40,7 @@ post "/create_contact" do
     new_contact.email=params[:email]
     new_contact.note=params[:note]
     new_contact.save
+    redirect to("/home")
 end
 
 get "/delete_contact/:id" do

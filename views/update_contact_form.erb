@@ -1,0 +1,27 @@
+<h1>Edit Contact</h1>
+
+<form action="/update_contact/<%= @contact.id %>" method="post">
+
+  <div>
+  <label for="first_name">First Name:</label>
+  <input type="text" name="first_name" id="first_name" value="<%=@contact.first_name %>">
+  </div>
+  
+  <div>
+  <label for="last_name">Last Name:</label>
+  <input type="text" name="last_name" id="last_name" value="<%=@contact.last_name %>">
+  </div>
+  
+  <div>
+  <label for="email">Email Address:</label>
+  <input type="email" name="email" id="email" value="<%=@contact.email %>">
+  </div>
+
+  <div>
+  <label for="note">Note:</label>
+  <input type="text" name="note" id="note" value="<%=@contact.note %>">
+  </div>
+
+  <input type="submit" value="Update Contact">
+  
+</form>
