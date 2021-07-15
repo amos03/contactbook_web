@@ -1,0 +1,24 @@
+<h1>Contact Book Web</h1>
+
+<div>
+<a href = "/home">Home</a>
+</div>
+
+<div>
+<a href="/create_contact_form">Add a contact</a>
+</div>
+
+<div>
+<a href="/about">About</a>
+</div>
+
+<ul>
+
+<% @contacts.each do |contact| %>
+    <li><%= contact.first_name %> <%= contact.last_name %> (<%= contact.email %>)</li>
+    <li><%= contact.note %></li>
+    <li><a href="/update_contact_form/<%= contact.id %>">Edit</a> | <a href="/delete_contact_form/<%= contact.id %>">Delete</a></li>
+<% end %>
+
+</ul
+

@@ -10,6 +10,10 @@ get "/home" do
     erb :home
 end
 
+get "/about" do
+    erb :about
+end
+
 get "/create_contact_form"
     erb :create_contact_form
 end
